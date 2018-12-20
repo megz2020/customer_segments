@@ -15440,11 +15440,51 @@ The below data points are outliers in multiple features:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The first two principal components explain nearly 74% of the variance. We get up to nearly 93% of the variance explained with the first four principal components.</p>
-<p>Similarly to what I noticed earlier, the most variance is explained in the first principal componenet with Detergents_Paper, Grocery, and Milk, all of which have fairly negative weights. As such, detergents papers is a good indicator of spending on Grocery and Milk.</p>
-<p>The second principal component focuses on the other three dimensions, with heavy negative weights on Fresh, Frozen, and Delicatessen, with very little weight to the three in the first PC. Any of these three are good indicators of spending on the other couple, with little bearing on the three from the first PC.</p>
-<p>The third principal component is a little more interesting, especially given that in the second PC Fresh and Delicatessen were both fairly negatively weighted. This one seems to indicate that a smaller portion of the variance is actually explained by giving a negative weight to Fresh and a positive weight to Delicatessen, with smaller effects from the others (besides Grocery, which is almost completely disregarded in this principal component).</p>
-<p>The fourth principal component, similar to the third, also weights an opposing relationship to the second PC. This time, Frozen gets a heavy postive weighting against a negative weighting for Delicatessen. Compared to 2 and 3, this appears to be an explained variance when giving more of a weight to Fresh - which makes sense, as more Fresh food would logically mean less Frozen food. So in this PC, higher Fresh combined with higher Delicatessen means very little Frozen.</p>
+<ul>
+<li><p>The first two principal components explain nearly 74% of the variance. We get up to nearly 93% of the variance explained with the first four principal components.</p>
+</li>
+<li><p>Similarly to what I noticed earlier, the most variance is explained in the first principal componenet with Detergents_Paper, Grocery, and Milk, all of which have fairly negative weights. As such, detergents papers is a good indicator of spending on Grocery and Milk. also it's clear</p>
+<ul>
+<li><p>if value is positive, then:</p>
+<ul>
+<li>Sale of Fresh and/or Frozen category is high.</li>
+<li>Sale of Milk, Grocery and Detergent Paper is low</li>
+</ul>
+</li>
+<li><p>If it is negative, then cases will be:</p>
+<ul>
+<li>Sale of Fresh and Frozen category is low.</li>
+<li>Sale of Milk, Grocery and Detergent is high.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The second principal component focuses on the other three dimensions, with heavy negative weights on Fresh, Frozen, and Delicatessen, with very little weight to the three in the first PC. Any of these three are good indicators of spending on the other couple, with little bearing on the three from the first PC.</p>
+</li>
+<li><p>The third principal component is a little more interesting, absolute value of weight corresponding to Fresh, Frozen and Delicatessen is very high.</p>
+<ul>
+<li>If value is positive, then we have 2 cases :<ul>
+<li>Sale of fresh product is low</li>
+<li>Sale of Frozen and delicatessen product is high.</li>
+</ul>
+</li>
+<li>If it is negative, then negation of above statements will happen.</li>
+</ul>
+</li>
+<li><p>The fourth principal component, similar to the third, also weights an opposing relationship to the second PC. This time, Frozen gets a heavy postive weighting against a negative weighting for Delicatessen.</p>
+<ul>
+<li>so if :<ul>
+<li>Sale of Frozen items is high</li>
+<li>Sale of delicatessen is low</li>
+</ul>
+</li>
+<li>If it is negative,<ul>
+<li>then negation of above statements will happen.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -16661,7 +16701,8 @@ Sample point 2 predicted to be in Cluster 0
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong><br>
-it appears that the distribution of Retailers and Hotels/Restaurants/Cafes are more mixed than GMM predicted. Our previous definition of the customer segments does not quite fit with these classification. Retailers look belong to segment 0 or 1 and</p>
+it appears that the distribution of Retailers and Hotels/Restaurants/Cafes are more mixed than GMM predicted. Our previous definition of the customer segments does not quite fit with these classification. Retailers look belong to segment 0 or 1 and 
+some points are classified correctly, error is very high and it is intolerable. Hence, these classifications are not consistent with my previous definition of customer segments.</p>
 
 </div>
 </div>
@@ -16675,6 +16716,19 @@ it appears that the distribution of Retailers and Hotels/Restaurants/Cafes are m
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
